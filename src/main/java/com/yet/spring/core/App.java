@@ -46,6 +46,8 @@ public class App {
         app.logEvent(event, "log event for 1", EventType.INFO);
         event = (Event) applicationContext.getBean("event");
         app.logEvent(event, "log event for 2", EventType.ERROR);
+        event = (Event) applicationContext.getBean("event");
+        app.logEvent(event, "log event for 3", EventType.ERROR);
 
         applicationContext.close();
 
