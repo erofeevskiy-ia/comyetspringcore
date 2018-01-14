@@ -20,7 +20,7 @@
     <bean id="cacheFileEventLogger" class="com.yet.spring.core.loggers.CacheFileLogger" init-method="init"
           destroy-method="destroy">
         <constructor-arg value="10"/>
-        <constructor-arg value="myFile.txt"/>
+        <constructor-arg value="src\main\resources\myFile.txt"/>
     </bean>
 
     <bean id="app" class="com.yet.spring.core.App">
