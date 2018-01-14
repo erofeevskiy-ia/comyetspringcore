@@ -1,2 +1,0 @@
-Event{id=258327, msg='log event for Billy Miligan', date=14.01.2018 17:45:24}
-Event{id=688551, msg='log event for 2', date=14.01.2018 17:45:24}
