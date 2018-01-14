@@ -5,38 +5,17 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
+    <import resource="loggers.xml"/>
+
     <bean id="client" class="com.yet.spring.core.beans.Client">
         <constructor-arg value="1"/>
         <constructor-arg value="Billy Miligan"/>
-    </bean>
-
-    <bean id="eventLogger" class="com.yet.spring.core.loggers.ConsoleEventLogger"/>
-
-
-    <bean id="fileEventLogger" class="com.yet.spring.core.loggers.FileEventLogger" init-method="init">
-        <constructor-arg value="myFile.txt"/>
-    </bean>
-
-    <bean id="cacheFileEventLogger" class="com.yet.spring.core.loggers.CacheFileLogger" init-method="init"
-          destroy-method="destroy">
-        <constructor-arg value="10"/>
-        <constructor-arg value="src\main\resources\myFile.txt"/>
     </bean>
 
     <bean id="app" class="com.yet.spring.core.App">
         <constructor-arg ref="client"/>
         <!--<constructor-arg ref="eventLogger"/>-->
         <constructor-arg ref="cacheFileEventLogger"/>
-    </bean>
-
-
-    <bean id="event" class="com.yet.spring.core.loggers.Event" scope="prototype">
-        <constructor-arg>
-            <bean class="java.util.Date"/>
-        </constructor-arg>
-        <constructor-arg>
-            <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
-        </constructor-arg>
     </bean>
 
 
